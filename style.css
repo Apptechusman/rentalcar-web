@@ -1,0 +1,306 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #ff3838;
+            --dark: #111222;
+            --light: #ffffff;
+            --grey: #f4f4f4;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--grey);
+            color: var(--dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        
+        header {
+            background-color: var(--dark);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            color: var(--light);
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--light);
+            padding: 0 20px;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fadeInDown 1s forwards 0.5s;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 1s;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 12px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(255, 56, 56, 0.4);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 1.2s;
+        }
+
+        .btn:hover {
+            background-color: #e02424;
+            transform: scale(1.05);
+        }
+
+        
+        @keyframes fadeInDown {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        
+        .fleet-section {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 10px auto 0;
+        }
+
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .car-card {
+            background: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .car-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .car-details {
+            padding: 25px;
+        }
+
+        .car-details h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: var(--primary);
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        
+        .booking-section {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 80px 50px;
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #ccc;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background-color: rgba(0,0,0,0.5);
+            color: var(--light);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 8px rgba(255, 56, 56, 0.5);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            background-color: #e02424;
+        }
+
+        
+        .contact-section {
+            padding: 80px 50px;
+            background-color: var(--light);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--grey);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .contact-container .form-group label {
+            color: #555;
+            font-weight: 600;
+        }
+
+        .contact-container .form-group input, .contact-container .form-group textarea {
+            background-color: var(--light);
+            color: var(--dark);
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            header { padding: 20px; }
+            .fleet-section, .booking-section, .contact-section { padding: 50px 20px; }
+            .hero h1 { font-size: 36px; }
+        }
+
+        
+        footer {
+            background-color: #0b0c13;
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }

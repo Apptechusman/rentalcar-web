@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveXotic | Premium Car Rentals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="logo">Drive<span>Xotic</span></div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#fleet">Cars</a>
+            <a href="#booking">Book Now</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    
+    <section class="hero">
+        <h1>Drive Your Dream Today</h1>
+        <p>Premium & luxury car rentals at the best prices with instant checkout.</p>
+        <a href="#booking" class="btn">Explore Fleet</a>
+    </section>
+
+    
+    <section class="fleet-section" id="fleet">
+        <h2 class="section-title">Our Supercars</h2>
+        <div class="car-grid">
+            
+            
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80" alt="Porsche" class="car-img">
+                <div class="car-details">
+                    <h3>Porsche 911 Carrera</h3>
+                    <p class="price">$250 / Day</p>
+                    <a href="#booking" class="btn" onclick="selectCar('Porsche 911 Carrera')">Rent Now</a>
+                </div>
+            </div>
+
+            
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=500&q=80" alt="BMW" class="car-img">
+                <div class="car-details">
+                    <h3>BMW M4 Competition</h3>
+                    <p class="price">$180 / Day</p>
+                    <a href="#booking" class="btn" onclick="selectCar('BMW M4 Competition')">Rent Now</a>
+                </div>
+            </div>
+
+            
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=500&q=80" alt="Mercedes" class="car-img">
+                <div class="car-details">
+                    <h3>Mercedes AMG GT</h3>
+                    <p class="price">$290 / Day</p>
+                    <a href="#booking" class="btn" onclick="selectCar('Mercedes AMG GT')">Rent Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+    <section class="booking-section" id="booking">
+        <h2 class="section-title" style="color: var(--light);">Book Your Ride</h2>
+        <div class="booking-container">
+            <form id="rentalForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="carSelect">Select Car</label>
+                        <select id="carSelect" required>
+                            <option value="" disabled selected>Choose your car...</option>
+                            <option value="Porsche 911 Carrera">Porsche 911 Carrera</option>
+                            <option value="BMW M4 Competition">BMW M4 Competition</option>
+                            <option value="Mercedes AMG GT">Mercedes AMG GT</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="John Doe" required>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="checkIn">Check-In (Pick-up Date)</label>
+                        <input type="date" id="checkIn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkOut">Check-Out (Return Date)</label>
+                        <input type="date" id="checkOut" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Confirm Booking</button>
+            </form>
+        </div>
+    </section>
+
+    
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email Address</label>
+                    <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Your Message</label>
+                    <textarea id="contactMessage" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2026 DriveXotic. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
