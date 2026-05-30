@@ -1,0 +1,52 @@
+ <script>
+        
+        function selectCar(carName) {
+            const carSelect = document.getElementById('carSelect');
+            carSelect.value = carName;
+        }
+
+        
+        document.getElementById('rentalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const car = document.getElementById('carSelect').value;
+            const name = document.getElementById('fullName').value;
+            const checkInDate = new Date(document.getElementById('checkIn').value);
+            const checkOutDate = new Date(document.getElementById('checkOut').value);
+            const today = new Date();
+            today.setHours(0,0,0,0);
+
+            if (checkInDate < today) {
+                alert("Check-in date gujre hue kal ki nahi ho sakti!");
+                return;
+            }
+
+            if (checkOutDate <= checkInDate) {
+                alert("Check-out date hamesha Check-in date ke baad ki honi chahiye!");
+                return;
+            }
+
+            alert(`Congratulations ${name}!\nAapki ${car} successfully book ho chuki hai.\nPick-up Date: ${checkInDate.toDateString()}\nReturn Date: ${checkOutDate.toDateString()}`);
+            this.reset();
+        });
+
+        
+        const todayStr = new Date().toISOString().split('T')[0];
+        document.getElementById('checkIn').min = todayStr;
+        document.getElementById('checkOut').min = todayStr;
+
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const contactName = document.getElementById('contactName').value;
+            const contactEmail = document.getElementById('contactEmail').value;
+            const contactMessage = document.getElementById('contactMessage').value;
+
+            
+            alert(`Thank you, ${contactName}!\nAapka message hume mil gaya hai. Hum jald hi ${contactEmail} par aapse raabta karenge.`);
+            
+            
+            this.reset();
+        });
+    </script>
